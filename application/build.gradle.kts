@@ -20,12 +20,10 @@ task<JavaExec>("startApplication") {
     classpath = sourceSets["main"].runtimeClasspath
     main = "org.example.demin.Application"
 
-    val pack = "org.example.demin.log"
     val loggers = listOf(
-        "ConsoleLogger",
+        "ConsoleLogger1",
         "FileLogger",
         "CombinedLogger")
-        .map { "$pack.$it" }
 
-    args = listOf(loggers[2], "<a>%s</a>")
+    args = listOf(loggers[0], "<a>%s</a>")
 }
