@@ -21,7 +21,7 @@ public final class StringTagFormatter {
   public String formatString(@NotNull String str) {
     final var formatStr = format.getFormat();
     final var formattedSting = String.format(formatStr, str);
-    if (Objects.equals(formattedSting, formatStr)) {
+    if (Objects.equals(formattedSting, formatStr) && !formatStr.isEmpty()) {
       System.out.println("Failed to apply format");
       return str;
     }
