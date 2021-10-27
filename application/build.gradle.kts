@@ -21,9 +21,9 @@ task<JavaExec>("startApplication") {
     main = "org.example.demin.Application"
 
     val loggers = listOf(
-        "ConsoleLogger1",
+        "ConsoleLogger",
         "FileLogger",
         "CombinedLogger")
 
-    args = listOf(loggers[0], "<a>%s</a>")
+    args = listOf(loggers[2], "<a>%s</a>")
 }

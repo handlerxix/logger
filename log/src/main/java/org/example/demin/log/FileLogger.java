@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 public final class FileLogger extends LoggerBase {
 
@@ -34,7 +33,7 @@ public final class FileLogger extends LoggerBase {
     try {
       final var tagFormatted = tagFormatter.formatString(str);
       final var lineFormatted = formatter.formatString(tagFormatted, counter.getNumber()) + "\n";
-      fileStream.write(lineFormatted.getBytes(StandardCharsets.UTF_8));
+      fileStream.write(lineFormatted.getBytes());
     } catch (IOException e) {
       e.printStackTrace();
     }
